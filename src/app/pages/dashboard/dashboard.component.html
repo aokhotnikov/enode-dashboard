@@ -1,0 +1,37 @@
+<div class="flex flex-col h-full">
+    <app-header [name]="'Dashboard'"></app-header>
+    <div class="flex flex-wrap m-4">
+        <div class="w-full order-1">
+            <app-card-health [status]="isServerRun"></app-card-health>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-2">
+            <app-card-model [modelName]="Vendor.Audi" [sum]="cardModelData[Vendor.Audi]"></app-card-model>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-2">
+            <app-card-model [modelName]="Vendor.BMW" [sum]="cardModelData[Vendor.BMW]"></app-card-model>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-2">
+            <app-card-model [modelName]="Vendor.Volkswagen" [sum]="cardModelData[Vendor.Volkswagen]"></app-card-model>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-2">
+            <app-card-model [modelName]="Vendor.Tesla" [sum]="cardModelData[Vendor.Tesla]"></app-card-model>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-2">
+            <app-card-model [modelName]="Vendor.Peugeot" [sum]="cardModelData[Vendor.Peugeot]"></app-card-model>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-2">
+            <app-card-model [modelName]="Vendor.Hyundai" [sum]="cardModelData[Vendor.Hyundai]"></app-card-model>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-4">
+            <app-card-avg-response-time [values]="cardAVGResponseTime"></app-card-avg-response-time>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-4">
+            <app-card-total-users [total]="vehicleSrv.vehicles.length"></app-card-total-users>
+            <div class="pt-0.5"></div>
+            <app-card-system-alerts></app-card-system-alerts>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 order-4">
+            <app-card-charging-sessions></app-card-charging-sessions>
+        </div>
+    </div>
+</div>

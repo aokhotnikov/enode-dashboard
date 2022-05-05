@@ -1,0 +1,30 @@
+.page-container {
+  @apply flex flex-col absolute inset-0;
+}
+
+.mat-toolbar {
+  @apply bg-toolbar text-white;
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+
+  .mat-sidenav {
+    background-color: var(--color-primary-background);  // -> @apply bg-primary;
+    min-width: 180px;
+    &.partial {
+      min-width: 60px;
+    }
+  }
+  .mat-sidenav-content {
+    &.expanded {
+      margin-left: 60px!important;
+    }
+  }
+}
+
+.active-btn {
+  @apply text-primary;  // -> color: var(--color-primary);
+}

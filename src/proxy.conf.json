@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://api.livetest.enode.io",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

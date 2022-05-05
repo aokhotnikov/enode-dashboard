@@ -1,0 +1,51 @@
+<div class="page-container">
+    <mat-toolbar>
+        <button mat-icon-button (click)="toggleSideNav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h3>&nbsp;Enode Dashboard</h3>
+        <span class="flex-auto"></span>
+        <button mat-icon-button class="icon favorite-icon" aria-label="icon-button with heart icon">
+            <mat-icon>settings</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="!mobileQuery.matches" [class.partial]="isPartialSideNav">
+
+            <mat-nav-list (click)="mobileQuery.matches && sidenav.close()">
+
+                <button class="btn-dashboard" mat-list-item [routerLink]="['/' + 'dashboard']" routerLinkActive="active-btn">
+                    <mat-icon>dashboard</mat-icon>
+                    <label class="pl-2 cursor-pointer" [hidden]="isPartialSideNav">Dashboard</label>
+                </button>
+
+                <button class="btn-vehicles" mat-list-item [routerLink]="['/' + 'vehicles']" routerLinkActive="active-btn">
+                    <mat-icon>directions_car</mat-icon>
+                    <label class="pl-2 cursor-pointer" [hidden]="isPartialSideNav">Vehicles</label>
+                </button>
+
+                <button class="btn-chargers" mat-list-item [routerLink]="['/' + 'chargers']" routerLinkActive="active-btn">
+                    <mat-icon>flash_on</mat-icon>
+                    <label class="pl-2 cursor-pointer" [hidden]="isPartialSideNav">Chargers</label>
+                </button>
+
+                <button class="btn-system-alerts" mat-list-item [routerLink]="['/' + 'system-alerts']" routerLinkActive="active-btn">
+                    <mat-icon>notifications</mat-icon>
+                    <label class="pl-2 cursor-pointer" [hidden]="isPartialSideNav">System alerts</label>
+                </button>
+
+                <button class="btn-users" mat-list-item [routerLink]="['/' + 'users']" routerLinkActive="active-btn">
+                    <mat-icon>person</mat-icon>
+                    <label class="pl-2 cursor-pointer" [hidden]="isPartialSideNav">Users</label>
+                </button>
+
+            </mat-nav-list>
+
+        </mat-sidenav>
+        <mat-sidenav-content [class.expanded]="isPartialSideNav">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
