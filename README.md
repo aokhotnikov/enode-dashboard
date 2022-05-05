@@ -20,4 +20,4 @@ Run `npm run deploy` to build and deploy the project to firebase hosting.
 
 ## Tailwindcss
 
-[How to make Angular friends with Tailwindcss](anotherhttps://notiz.dev/blog/angular-10-with-tailwindcss#setup)
+[How to make Angular friends with Tailwindcss](https://notiz.dev/blog/angular-10-with-tailwindcss#setup)
